@@ -9,123 +9,162 @@
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=DM+Serif+Display&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --brown-dark: #6B4226; --brown-mid: #A0522D; --brown-light: #C97B3A;
-    --brown-pale: #E8B87A; --cream: #FDF6EE; --cream-light: #FFF8F0;
-    --border: #E8D5C0; --text: #3B2A1A; --text-muted: #8B6B4A;
+    --brown-dark:#6B4226;--brown-mid:#A0522D;--brown-light:#C97B3A;
+    --brown-pale:#E8B87A;--cream:#FDF6EE;--cream-light:#FFF8F0;
+    --border:#E8D5C0;--text:#3B2A1A;--text-muted:#8B6B4A;
   }
-  body { font-family: 'Noto Serif KR', Georgia, serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+  body{font-family:'Noto Serif KR',Georgia,serif;background:var(--cream);color:var(--text);min-height:100vh;}
 
-  .header { background: linear-gradient(135deg, #6B4226 0%, #A0522D 60%, #C97B3A 100%); padding: 24px 28px 20px; box-shadow: 0 4px 20px rgba(107,66,38,0.3); }
-  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-  .header-title { font-family: 'DM Serif Display', serif; font-size: 24px; color: #FFF8F0; }
-  .header-sub { font-size: 12px; color: #E8C9A0; margin-top: 3px; }
-  .kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
-  .kpi-card { background: rgba(255,248,240,0.15); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,248,240,0.2); }
-  .kpi-icon { font-size: 20px; margin-bottom: 4px; }
-  .kpi-value { font-size: 19px; font-weight: 700; color: #FFF8F0; }
-  .kpi-label { font-size: 11px; color: #E8C9A0; margin-top: 2px; }
-  .kpi-sub { font-size: 10px; color: #C4956A; margin-top: 1px; }
+  .header{background:linear-gradient(135deg,#6B4226 0%,#A0522D 60%,#C97B3A 100%);padding:24px 28px 20px;box-shadow:0 4px 20px rgba(107,66,38,0.3);}
+  .header-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .header-title{font-family:'DM Serif Display',serif;font-size:24px;color:#FFF8F0;}
+  .header-sub{font-size:12px;color:#E8C9A0;margin-top:3px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .kpi-card{background:rgba(255,248,240,0.15);border-radius:12px;padding:14px 16px;border:1px solid rgba(255,248,240,0.2);}
+  .kpi-icon{font-size:20px;margin-bottom:4px;}
+  .kpi-value{font-size:19px;font-weight:700;color:#FFF8F0;}
+  .kpi-label{font-size:11px;color:#E8C9A0;margin-top:2px;}
+  .kpi-sub{font-size:10px;color:#C4956A;margin-top:1px;}
 
-  .tabs { background: var(--cream-light); border-bottom: 2px solid var(--border); padding: 0 28px; display: flex; gap: 4px; }
-  .tab-btn { padding: 12px 16px; border: none; background: none; cursor: pointer; font-size: 13px; font-family: inherit; color: var(--text-muted); border-bottom: 3px solid transparent; transition: all 0.2s; }
-  .tab-btn.active { color: var(--brown-dark); font-weight: 700; border-bottom-color: var(--brown-light); }
+  .tabs{background:var(--cream-light);border-bottom:2px solid var(--border);padding:0 28px;display:flex;gap:4px;}
+  .tab-btn{padding:12px 16px;border:none;background:none;cursor:pointer;font-size:13px;font-family:inherit;color:var(--text-muted);border-bottom:3px solid transparent;transition:all 0.2s;}
+  .tab-btn.active{color:var(--brown-dark);font-weight:700;border-bottom-color:var(--brown-light);}
 
-  .content { padding: 22px 28px; }
-  .tab-pane { display: none; }
-  .tab-pane.active { display: block; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .content{padding:22px 28px;}
+  .tab-pane{display:none;}.tab-pane.active{display:block;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
 
-  .card { background: var(--cream-light); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-  .card-header { padding: 14px 18px; background: #F5EDE0; border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 700; color: var(--brown-dark); display: flex; justify-content: space-between; align-items: center; }
-  .card-body { padding: 18px; }
+  .card{background:var(--cream-light);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .card-header{padding:14px 18px;background:#F5EDE0;border-bottom:1px solid var(--border);font-size:14px;font-weight:700;color:var(--brown-dark);display:flex;justify-content:space-between;align-items:center;}
+  .card-body{padding:18px;}
 
-  table { width: 100%; border-collapse: collapse; }
-  th { padding: 10px 14px; text-align: left; font-size: 12px; color: var(--brown-dark); font-weight: 600; background: #EEE0D0; }
-  td { padding: 11px 14px; font-size: 13px; border-bottom: 1px solid #EEE0D0; }
-  tr:nth-child(even) td { background: #FDF3EA; }
-  tfoot td { background: #E8D5C0 !important; font-weight: 700; font-size: 13px; }
+  table{width:100%;border-collapse:collapse;}
+  th{padding:10px 14px;text-align:left;font-size:12px;color:var(--brown-dark);font-weight:600;background:#EEE0D0;}
+  td{padding:11px 14px;font-size:13px;border-bottom:1px solid #EEE0D0;}
+  tr:nth-child(even) td{background:#FDF3EA;}
+  tfoot td{background:#E8D5C0!important;font-weight:700;font-size:13px;}
 
-  .badge { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-block; }
-  .badge-green { background: #DCFCE7; color: #166534; }
-  .badge-amber { background: #FEF9C3; color: #854D0E; }
-  .badge-red   { background: #FEE2E2; color: #991B1B; }
+  .badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;display:inline-block;}
+  .badge-green{background:#DCFCE7;color:#166534;}
+  .badge-amber{background:#FEF9C3;color:#854D0E;}
+  .badge-red{background:#FEE2E2;color:#991B1B;}
 
-  .progress-wrap { background: #EEE0D0; border-radius: 20px; height: 8px; overflow: hidden; margin: 8px 0; }
-  .progress-bar { height: 100%; background: linear-gradient(90deg, #C97B3A, #E8B87A); border-radius: 20px; transition: width 0.6s ease; }
+  .progress-wrap{background:#EEE0D0;border-radius:20px;height:8px;overflow:hidden;margin:8px 0;}
+  .progress-bar{height:100%;background:linear-gradient(90deg,#C97B3A,#E8B87A);border-radius:20px;transition:width 0.6s ease;}
 
-  .dev-item { padding: 16px 18px; border-bottom: 1px solid #EEE0D0; }
-  .dev-item:last-child { border-bottom: none; }
-  .dev-item:nth-child(even) { background: #FDF3EA; }
-  .dev-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-  .dev-name { font-size: 14px; font-weight: 700; }
-  .dev-meta { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-  .dev-right { display: flex; gap: 8px; align-items: center; }
-  .dev-note { font-size: 12px; color: #7B5B3A; margin-top: 6px; }
+  .dev-item{padding:16px 18px;border-bottom:1px solid #EEE0D0;}
+  .dev-item:last-child{border-bottom:none;}
+  .dev-item:nth-child(even){background:#FDF3EA;}
+  .dev-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+  .dev-name{font-size:14px;font-weight:700;}
+  .dev-meta{font-size:11px;color:var(--text-muted);margin-top:3px;}
+  .dev-right{display:flex;gap:8px;align-items:center;}
+  .dev-note{font-size:12px;color:#7B5B3A;margin-top:6px;}
 
-  .cafe-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-  .cafe-card { background: var(--cream-light); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; border-left: 4px solid var(--brown-dark); }
-  .cafe-card.delay { border-left-color: var(--brown-light); background: #FFF5ED; }
-  .cafe-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .cafe-card-name { font-size: 14px; font-weight: 700; }
-  .cafe-card-detail { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
-  .cafe-card-amount { font-size: 13px; font-weight: 700; color: var(--brown-light); margin-top: 8px; }
+  .cafe-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+  .cafe-card{background:var(--cream-light);border:1px solid var(--border);border-radius:12px;padding:14px 16px;border-left:4px solid var(--brown-dark);}
+  .cafe-card.delay{border-left-color:var(--brown-light);background:#FFF5ED;}
+  .cafe-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .cafe-card-name{font-size:14px;font-weight:700;}
+  .cafe-card-detail{font-size:12px;color:var(--text-muted);margin-top:3px;}
+  .cafe-card-amount{font-size:13px;font-weight:700;color:var(--brown-light);margin-top:8px;}
 
-  .quick-list { display: flex; flex-direction: column; gap: 10px; }
-  .quick-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-radius: 8px; background: #F7F0E8; border: 1px solid #E8D5C0; }
-  .quick-item.alert { background: #FFF0E8; border-color: #F0C8A0; }
-  .quick-label { font-size: 13px; color: #5C4030; }
-  .quick-value { font-size: 14px; font-weight: 700; color: var(--brown-dark); }
-  .quick-item.alert .quick-value { color: var(--brown-light); }
+  .quick-list{display:flex;flex-direction:column;gap:10px;}
+  .quick-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:8px;background:#F7F0E8;border:1px solid #E8D5C0;}
+  .quick-item.alert{background:#FFF0E8;border-color:#F0C8A0;}
+  .quick-label{font-size:13px;color:#5C4030;}
+  .quick-value{font-size:14px;font-weight:700;color:var(--brown-dark);}
+  .quick-item.alert .quick-value{color:var(--brown-light);}
 
-  .stage-mini { text-align: center; background: var(--cream-light); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
-  .stage-dot { width: 12px; height: 12px; border-radius: 50%; margin: 0 auto 8px; }
-  .stage-count { font-size: 20px; font-weight: 700; color: var(--brown-dark); }
-  .stage-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .stage-mini{text-align:center;background:var(--cream-light);border:1px solid var(--border);border-radius:12px;padding:14px;}
+  .stage-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 8px;}
+  .stage-count{font-size:20px;font-weight:700;color:var(--brown-dark);}
+  .stage-label{font-size:11px;color:var(--text-muted);margin-top:2px;}
 
-  /* ── 편집 관련 ── */
-  .editable {
-    cursor: pointer; border-bottom: 1px dashed var(--brown-pale);
-    transition: background 0.15s; border-radius: 3px; padding: 1px 3px;
-  }
-  .editable:hover { background: #FDE8CC; }
-  .editable:focus { outline: 2px solid var(--brown-light); background: #FFF3E0; border-bottom: none; border-radius: 4px; }
+  .editable{cursor:pointer;border-bottom:1px dashed var(--brown-pale);transition:background 0.15s;border-radius:3px;padding:1px 3px;}
+  .editable:hover{background:#FDE8CC;}
+  .editable:focus{outline:2px solid var(--brown-light);background:#FFF3E0;border-bottom:none;border-radius:4px;}
+  select.edit-select{font-family:inherit;font-size:11px;font-weight:600;border:1px solid var(--brown-light);border-radius:20px;padding:3px 10px;cursor:pointer;background:#FFF8F0;color:var(--brown-dark);outline:none;}
 
-  select.edit-select {
-    font-family: inherit; font-size: 11px; font-weight: 600;
-    border: 1px solid var(--brown-light); border-radius: 20px;
-    padding: 3px 10px; cursor: pointer; background: #FFF8F0;
-    color: var(--brown-dark); outline: none;
-  }
+  .edit-hint{font-size:11px;color:var(--text-muted);padding:6px 18px;background:#F5EDE0;border-bottom:1px solid var(--border);}
+  .btn-add{margin:10px 18px 14px;padding:8px 16px;background:var(--brown-dark);color:#FFF8F0;border:none;border-radius:8px;font-family:inherit;font-size:13px;cursor:pointer;transition:background 0.2s;}
+  .btn-add:hover{background:var(--brown-mid);}
+  .btn-del{background:none;border:none;color:#CBA;cursor:pointer;font-size:14px;padding:0 4px;}
+  .btn-del:hover{color:#991B1B;}
 
-  .edit-hint { font-size: 11px; color: var(--text-muted); margin-top: 6px; padding: 6px 12px; background: #F5EDE0; border-radius: 8px; text-align: center; }
+  /* 저장 바 */
+  .save-bar{position:fixed;bottom:20px;right:24px;background:var(--brown-dark);color:#FFF8F0;padding:10px 20px;border-radius:30px;font-size:13px;box-shadow:0 4px 16px rgba(107,66,38,0.4);display:none;gap:10px;align-items:center;z-index:999;}
+  .save-bar.show{display:flex;}
+  .save-bar button{background:var(--brown-pale);color:var(--brown-dark);border:none;padding:5px 14px;border-radius:20px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;}
+  .save-bar button:disabled{opacity:0.6;cursor:not-allowed;}
 
-  .btn-add { margin: 10px 18px 14px; padding: 8px 16px; background: var(--brown-dark); color: #FFF8F0; border: none; border-radius: 8px; font-family: inherit; font-size: 13px; cursor: pointer; transition: background 0.2s; }
-  .btn-add:hover { background: var(--brown-mid); }
-  .btn-del { background: none; border: none; color: #CBA; cursor: pointer; font-size: 14px; padding: 0 4px; }
-  .btn-del:hover { color: #991B1B; }
+  /* 로딩 & 설정 */
+  .loading-overlay{position:fixed;inset:0;background:rgba(253,246,238,0.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:14px;}
+  .loading-spinner{width:40px;height:40px;border:4px solid var(--border);border-top-color:var(--brown-light);border-radius:50%;animation:spin 0.8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
 
-  .save-bar { position: fixed; bottom: 20px; right: 24px; background: var(--brown-dark); color: #FFF8F0; padding: 10px 20px; border-radius: 30px; font-size: 13px; box-shadow: 0 4px 16px rgba(107,66,38,0.4); display: none; gap: 10px; align-items: center; z-index: 999; }
-  .save-bar.show { display: flex; }
-  .save-bar button { background: var(--brown-pale); color: var(--brown-dark); border: none; padding: 5px 14px; border-radius: 20px; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .setup-box{background:var(--cream-light);border:2px solid var(--brown-light);border-radius:16px;padding:28px 32px;max-width:500px;width:90%;box-shadow:0 8px 30px rgba(107,66,38,0.2);}
+  .setup-title{font-size:18px;font-weight:700;color:var(--brown-dark);margin-bottom:8px;}
+  .setup-desc{font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.6;}
+  .setup-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:13px;color:var(--text);background:var(--cream);outline:none;margin-bottom:12px;}
+  .setup-input:focus{border-color:var(--brown-light);}
+  .setup-btn{width:100%;padding:11px;background:var(--brown-dark);color:#FFF8F0;border:none;border-radius:8px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;}
+  .setup-btn:hover{background:var(--brown-mid);}
 
-  @media (max-width: 720px) {
-    .kpi-grid { grid-template-columns: repeat(2,1fr); }
-    .grid-2 { grid-template-columns: 1fr; }
-    .grid-4 { grid-template-columns: repeat(2,1fr); }
-    .cafe-cards { grid-template-columns: 1fr; }
+  .api-status{font-size:11px;padding:4px 12px;border-radius:20px;font-weight:600;}
+  .api-ok{background:#DCFCE7;color:#166534;}
+  .api-err{background:#FEE2E2;color:#991B1B;}
+  .api-local{background:#FEF9C3;color:#854D0E;}
+
+  @media(max-width:720px){
+    .kpi-grid{grid-template-columns:repeat(2,1fr);}
+    .grid-2{grid-template-columns:1fr;}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .cafe-cards{grid-template-columns:1fr;}
   }
 </style>
 </head>
 <body>
 
+<!-- 로딩 오버레이 -->
+<div class="loading-overlay" id="loading">
+  <div class="loading-spinner"></div>
+  <div style="color:var(--brown-dark);font-size:14px">데이터 불러오는 중...</div>
+</div>
+
+<!-- API 설정 화면 (최초 1회) -->
+<div class="loading-overlay" id="setup-screen" style="display:none;">
+  <div class="setup-box">
+    <div class="setup-title">🥐 BiasCook 초기 설정</div>
+    <div class="setup-desc">
+      Google Apps Script 배포 후 발급받은 <b>웹 앱 URL</b>을 입력해주세요.<br>
+      한 번만 입력하면 이 기기에 저장돼요.
+    </div>
+    <input class="setup-input" id="api-url-input" placeholder="https://script.google.com/macros/s/XXXXX/exec" />
+    <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px;">
+      💡 Apps Script → 배포 → 웹 앱 URL 에서 복사하세요
+    </div>
+    <button class="setup-btn" onclick="saveApiUrl()">연결하기</button>
+    <div style="margin-top:12px;text-align:center;">
+      <button onclick="useLocalMode()" style="background:none;border:none;color:var(--text-muted);font-size:12px;cursor:pointer;font-family:inherit;">
+        지금은 로컬 모드로 사용하기
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- HEADER -->
 <div class="header">
   <div class="header-top">
     <span style="font-size:36px">🥐</span>
-    <div>
+    <div style="flex:1">
       <div class="header-title">BiasCook 운영 현황판</div>
       <div class="header-sub">홈베이커 지급 관리 · 제빵 개발 · 카페 납품 통합 대시보드</div>
+    </div>
+    <div>
+      <span class="api-status" id="api-status-badge">⏳ 연결 중</span>
+      <button onclick="openSettings()" style="margin-left:8px;background:rgba(255,248,240,0.2);border:1px solid rgba(255,248,240,0.3);color:#FFF8F0;padding:4px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:inherit;">⚙️ 설정</button>
     </div>
   </div>
   <div class="kpi-grid">
@@ -174,9 +213,9 @@
         <span>💰 홈베이커 지급 내역</span>
         <span style="font-size:12px;font-weight:400;color:var(--text-muted)" id="ledger-month-label"></span>
       </div>
-      <div class="edit-hint">✏️ 이름, 품목, 금액을 클릭하면 바로 수정할 수 있어요</div>
+      <div class="edit-hint">✏️ 이름, 품목, 금액을 클릭하면 바로 수정 — 저장 버튼 누르면 Google Sheets에 반영돼요</div>
       <table>
-        <thead><tr><th>베이커</th><th>전문 품목</th><th>상태</th><th>이번 달 지급</th><th>누적 지급액</th><th>수수료(30%)</th><th></th></tr></thead>
+        <thead><tr><th>베이커</th><th>전문 품목</th><th>상태</th><th>이번 달 지급(원)</th><th>누적 지급액(원)</th><th>수수료(30%)</th><th></th></tr></thead>
         <tbody id="baker-tbody"></tbody>
         <tfoot><tr><td colspan="3">합계</td><td id="foot-paid">-</td><td id="foot-total">-</td><td id="foot-fee">-</td><td></td></tr></tfoot>
       </table>
@@ -192,7 +231,7 @@
   <div class="tab-pane" id="tab-development">
     <div class="card" style="margin-bottom:16px">
       <div class="card-header">🧪 제빵 개발 진행 현황</div>
-      <div class="edit-hint">✏️ 품목명, 진행률, 단계, 메모를 클릭하면 수정할 수 있어요</div>
+      <div class="edit-hint">✏️ 품목명, 진행률, 단계, 메모 클릭 후 수정 → 저장 버튼으로 Sheets에 반영</div>
       <div id="dev-list"></div>
       <button class="btn-add" onclick="addDev()">+ 개발 품목 추가</button>
     </div>
@@ -203,9 +242,9 @@
   <div class="tab-pane" id="tab-delivery">
     <div class="card" style="margin-bottom:16px">
       <div class="card-header">🚚 카페 납품 현황</div>
-      <div class="edit-hint">✏️ 카페명, 금액, 상태를 클릭하면 수정할 수 있어요</div>
+      <div class="edit-hint">✏️ 카페명, 금액, 상태 클릭 후 수정 → 저장 버튼으로 Sheets에 반영</div>
       <table>
-        <thead><tr><th>카페명</th><th>지역</th><th>담당 베이커</th><th>납품 품목</th><th>납품 주기</th><th>최근 납품일</th><th>월 납품액</th><th>상태</th><th></th></tr></thead>
+        <thead><tr><th>카페명</th><th>지역</th><th>담당 베이커</th><th>납품 품목</th><th>납품 주기</th><th>최근 납품일</th><th>월 납품액(원)</th><th>상태</th><th></th></tr></thead>
         <tbody id="cafe-tbody"></tbody>
         <tfoot><tr><td colspan="6">월 총 납품액</td><td id="cafe-foot-total">-</td><td colspan="2"></td></tr></tfoot>
       </table>
@@ -216,77 +255,255 @@
 
 </div>
 
-<!-- SAVE BAR -->
+<!-- 저장 바 -->
 <div class="save-bar" id="save-bar">
-  <span>💾 변경사항이 있어요</span>
-  <button onclick="saveData()">저장하기</button>
+  <span id="save-bar-msg">💾 변경사항이 있어요</span>
+  <button id="save-btn" onclick="saveAllData()">Google Sheets에 저장</button>
 </div>
 
 <div style="text-align:center;padding:16px 0 24px;font-size:11px;color:#B08060">
-  BiasCook · Food Operating System · 데이터는 브라우저에 자동 저장됩니다
+  BiasCook · Food Operating System · powered by Google Sheets
 </div>
 
 <script>
-// ── 기본 데이터 ──
-const DEFAULT = {
-  bakers: [
-    { id:1, name:"김민지", specialty:"마카롱", status:"활성", thisMonth:120000, total:420000 },
-    { id:2, name:"이수연", specialty:"스콘/타르트", status:"활성", thisMonth:95000, total:380000 },
-    { id:3, name:"박지현", specialty:"케이크", status:"활성", thisMonth:180000, total:560000 },
-    { id:4, name:"최아름", specialty:"쿠키류", status:"대기", thisMonth:0, total:200000 },
-    { id:5, name:"정소희", specialty:"브레드", status:"활성", thisMonth:85000, total:310000 },
-  ],
-  devs: [
-    { id:1, baker:"박지현", item:"딸기 생크림 케이크", stage:"카페 테스트", progress:80, deadline:"2026-03-10", note:"맛 피드백 반영 중" },
-    { id:2, baker:"김민지", item:"말차 마카롱 세트", stage:"레시피 완성", progress:60, deadline:"2026-03-20", note:"색소 배합 조정" },
-    { id:3, baker:"이수연", item:"얼그레이 스콘", stage:"시제품 제작", progress:40, deadline:"2026-04-01", note:"버터 비율 실험" },
-    { id:4, baker:"정소희", item:"크랜베리 호밀빵", stage:"기획", progress:15, deadline:"2026-04-15", note:"원가 계산 필요" },
-  ],
-  cafes: [
-    { id:1, name:"Bloom Coffee", region:"애틀랜타", baker:"박지현", item:"데일리 케이크 슬라이스", freq:"주 3회", lastDate:"2026-02-22", amount:180000, status:"정상" },
-    { id:2, name:"The Daily Grind", region:"스톤마운틴", baker:"김민지", item:"마카롱 세트(10입)", freq:"주 2회", lastDate:"2026-02-20", amount:120000, status:"정상" },
-    { id:3, name:"Porch & Roast", region:"디케이터", baker:"이수연", item:"스콘 믹스", freq:"주 2회", lastDate:"2026-02-18", amount:95000, status:"지연" },
-    { id:4, name:"Oak & Ember", region:"마리에타", baker:"정소희", item:"식사빵 모둠", freq:"주 1회", lastDate:"2026-02-21", amount:85000, status:"정상" },
-  ],
-  monthly: [
-    { month:"9월", paid:280000 }, { month:"10월", paid:350000 }, { month:"11월", paid:420000 },
-    { month:"12월", paid:390000 }, { month:"1월", paid:480000 }, { month:"2월", paid:480000 },
-  ]
-};
-
-let data = JSON.parse(localStorage.getItem('biacook_data') || 'null') || JSON.parse(JSON.stringify(DEFAULT));
-let nextId = Math.max(...data.bakers.map(b=>b.id), ...data.devs.map(d=>d.id), ...data.cafes.map(c=>c.id)) + 1;
-let changed = false;
-let charts = {};
+// ════════════════════════════════════════
+// ── 설정 & 상수
+// ════════════════════════════════════════
 const STAGES = ["기획","레시피 완성","시제품 제작","카페 테스트","납품 확정"];
 const STAGE_COLORS = {"기획":"#E8D5C0","레시피 완성":"#C97B3A","시제품 제작":"#A0522D","카페 테스트":"#6B4226","납품 확정":"#3B2A1A"};
 const STATUS_BAKER = ["활성","대기","중단"];
 const STATUS_CAFE  = ["정상","지연","중단"];
+const PIE_COLORS   = ['#C97B3A','#E8B87A','#6B4226','#A0522D','#D4956A'];
 
-const fmt = n => n > 0 ? '₩' + n.toLocaleString('ko-KR') : '-';
+const DEFAULT_DATA = {
+  bakers: [
+    {id:1,name:"김민지",specialty:"마카롱",status:"활성",thisMonth:120000,total:420000},
+    {id:2,name:"이수연",specialty:"스콘/타르트",status:"활성",thisMonth:95000,total:380000},
+    {id:3,name:"박지현",specialty:"케이크",status:"활성",thisMonth:180000,total:560000},
+    {id:4,name:"최아름",specialty:"쿠키류",status:"대기",thisMonth:0,total:200000},
+    {id:5,name:"정소희",specialty:"브레드",status:"활성",thisMonth:85000,total:310000},
+  ],
+  devs: [
+    {id:1,baker:"박지현",item:"딸기 생크림 케이크",stage:"카페 테스트",progress:80,deadline:"2026-03-10",note:"맛 피드백 반영 중"},
+    {id:2,baker:"김민지",item:"말차 마카롱 세트",stage:"레시피 완성",progress:60,deadline:"2026-03-20",note:"색소 배합 조정"},
+    {id:3,baker:"이수연",item:"얼그레이 스콘",stage:"시제품 제작",progress:40,deadline:"2026-04-01",note:"버터 비율 실험"},
+    {id:4,baker:"정소희",item:"크랜베리 호밀빵",stage:"기획",progress:15,deadline:"2026-04-15",note:"원가 계산 필요"},
+  ],
+  cafes: [
+    {id:1,name:"Bloom Coffee",region:"애틀랜타",baker:"박지현",item:"데일리 케이크 슬라이스",freq:"주 3회",lastDate:"2026-02-22",amount:180000,status:"정상"},
+    {id:2,name:"The Daily Grind",region:"스톤마운틴",baker:"김민지",item:"마카롱 세트(10입)",freq:"주 2회",lastDate:"2026-02-20",amount:120000,status:"정상"},
+    {id:3,name:"Porch & Roast",region:"디케이터",baker:"이수연",item:"스콘 믹스",freq:"주 2회",lastDate:"2026-02-18",amount:95000,status:"지연"},
+    {id:4,name:"Oak & Ember",region:"마리에타",baker:"정소희",item:"식사빵 모둠",freq:"주 1회",lastDate:"2026-02-21",amount:85000,status:"정상"},
+  ],
+  monthly:[
+    {month:"9월",paid:280000},{month:"10월",paid:350000},{month:"11월",paid:420000},
+    {month:"12월",paid:390000},{month:"1월",paid:480000},{month:"2월",paid:480000},
+  ]
+};
+
+// ════════════════════════════════════════
+// ── 상태 변수
+// ════════════════════════════════════════
+let data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+let nextId = 10;
+let changed = false;
+let charts = {};
+let API_URL = localStorage.getItem('biacook_api_url') || '';
+let isLocalMode = !API_URL;
+
+const fmt = n => (n > 0 ? '₩' + Number(n).toLocaleString('ko-KR') : '-');
 const nowMonth = () => new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long'});
 
-function markChanged() { changed = true; document.getElementById('save-bar').classList.add('show'); }
-function saveData() {
-  localStorage.setItem('biacook_data', JSON.stringify(data));
-  changed = false;
-  document.getElementById('save-bar').classList.remove('show');
+// ════════════════════════════════════════
+// ── API 설정
+// ════════════════════════════════════════
+function saveApiUrl() {
+  const url = document.getElementById('api-url-input').value.trim();
+  if (!url.startsWith('https://script.google.com')) {
+    alert('올바른 Google Apps Script URL을 입력해주세요.');
+    return;
+  }
+  localStorage.setItem('biacook_api_url', url);
+  API_URL = url;
+  isLocalMode = false;
+  document.getElementById('setup-screen').style.display = 'none';
+  loadAllData();
+}
+
+function useLocalMode() {
+  isLocalMode = true;
+  document.getElementById('setup-screen').style.display = 'none';
+  document.getElementById('loading').style.display = 'none';
+  setApiStatus('local');
+  data = JSON.parse(localStorage.getItem('biacook_local') || 'null') || JSON.parse(JSON.stringify(DEFAULT_DATA));
   render();
 }
 
-// ── 인라인 편집 헬퍼 ──
+function openSettings() {
+  const url = prompt('Google Apps Script URL을 입력하세요 (비우면 로컬 모드):', API_URL);
+  if (url === null) return;
+  if (url.trim()) {
+    localStorage.setItem('biacook_api_url', url.trim());
+    API_URL = url.trim();
+    isLocalMode = false;
+    loadAllData();
+  } else {
+    localStorage.removeItem('biacook_api_url');
+    API_URL = '';
+    isLocalMode = true;
+    setApiStatus('local');
+  }
+}
+
+function setApiStatus(status) {
+  const badge = document.getElementById('api-status-badge');
+  if (status === 'ok') { badge.textContent = '🟢 Sheets 연결됨'; badge.className = 'api-status api-ok'; }
+  else if (status === 'err') { badge.textContent = '🔴 연결 실패'; badge.className = 'api-status api-err'; }
+  else { badge.textContent = '🟡 로컬 모드'; badge.className = 'api-status api-local'; }
+}
+
+// ════════════════════════════════════════
+// ── 데이터 로드 (Google Sheets → 화면)
+// ════════════════════════════════════════
+async function loadAllData() {
+  if (isLocalMode) { useLocalMode(); return; }
+
+  document.getElementById('loading').style.display = 'flex';
+  document.getElementById('setup-screen').style.display = 'none';
+
+  try {
+    const [bakers, devs, cafes, monthly] = await Promise.all([
+      fetchSheet('bakers'), fetchSheet('devs'),
+      fetchSheet('cafes'), fetchSheet('monthly')
+    ]);
+
+    // Sheets에서 온 데이터 변환 (숫자 타입 보정)
+    data.bakers  = bakers.map(r => ({...r, id:+r.id||0, thisMonth:+r.thisMonth||0, total:+r.total||0}));
+    data.devs    = devs.map(r => ({...r, id:+r.id||0, progress:+r.progress||0}));
+    data.cafes   = cafes.map(r => ({...r, id:+r.id||0, amount:+r.amount||0}));
+    data.monthly = monthly.map(r => ({month:r.month, paid:+r.paid||0}));
+
+    // 빈 시트면 기본값 사용
+    if (!data.bakers.length)  data.bakers  = JSON.parse(JSON.stringify(DEFAULT_DATA.bakers));
+    if (!data.devs.length)    data.devs    = JSON.parse(JSON.stringify(DEFAULT_DATA.devs));
+    if (!data.cafes.length)   data.cafes   = JSON.parse(JSON.stringify(DEFAULT_DATA.cafes));
+    if (!data.monthly.length) data.monthly = JSON.parse(JSON.stringify(DEFAULT_DATA.monthly));
+
+    nextId = Math.max(...data.bakers.map(b=>+b.id||0), ...data.devs.map(d=>+d.id||0), ...data.cafes.map(c=>+c.id||0)) + 1;
+    setApiStatus('ok');
+
+  } catch(e) {
+    console.error(e);
+    setApiStatus('err');
+    // 실패하면 로컬 캐시 사용
+    const cached = localStorage.getItem('biacook_local');
+    if (cached) data = JSON.parse(cached);
+    alert('⚠️ Google Sheets 연결 실패. 로컬 캐시 데이터를 표시합니다.\n\n설정 버튼에서 URL을 확인해주세요.');
+  }
+
+  document.getElementById('loading').style.display = 'none';
+  render();
+}
+
+async function fetchSheet(sheetName) {
+  const res = await fetch(`${API_URL}?sheet=${sheetName}`, { method:'GET' });
+  const json = await res.json();
+  return json.data || [];
+}
+
+// ════════════════════════════════════════
+// ── 데이터 저장 (화면 → Google Sheets)
+// ════════════════════════════════════════
+async function saveAllData() {
+  const btn = document.getElementById('save-btn');
+  const msg = document.getElementById('save-bar-msg');
+
+  // 로컬 모드
+  if (isLocalMode) {
+    localStorage.setItem('biacook_local', JSON.stringify(data));
+    msg.textContent = '✅ 저장 완료!';
+    setTimeout(() => { changed = false; document.getElementById('save-bar').classList.remove('show'); msg.textContent = '💾 변경사항이 있어요'; }, 1500);
+    return;
+  }
+
+  btn.disabled = true;
+  msg.textContent = '⏳ Sheets에 저장 중...';
+
+  try {
+    await Promise.all([
+      postSheet('bakers',  data.bakers),
+      postSheet('devs',    data.devs),
+      postSheet('cafes',   data.cafes),
+      postSheet('monthly', data.monthly),
+    ]);
+    localStorage.setItem('biacook_local', JSON.stringify(data)); // 로컬 캐시도 갱신
+    msg.textContent = '✅ Google Sheets 저장 완료!';
+    setTimeout(() => { changed = false; document.getElementById('save-bar').classList.remove('show'); msg.textContent = '💾 변경사항이 있어요'; btn.disabled = false; }, 2000);
+  } catch(e) {
+    msg.textContent = '❌ 저장 실패. 다시 시도해주세요.';
+    btn.disabled = false;
+    setTimeout(() => { msg.textContent = '💾 변경사항이 있어요'; }, 3000);
+  }
+}
+
+async function postSheet(sheet, rows) {
+  await fetch(API_URL, {
+    method: 'POST',
+    body: JSON.stringify({ sheet, data: rows }),
+  });
+}
+
+function markChanged() {
+  changed = true;
+  document.getElementById('save-bar').classList.add('show');
+}
+
+// ════════════════════════════════════════
+// ── 렌더링
+// ════════════════════════════════════════
+function render() {
+  updateKPI();
+  renderBakerTable();
+  renderDevList();
+  renderCafeTable();
+  renderCafeCards();
+  renderStageSummary();
+  renderCharts();
+  document.getElementById('ledger-month-label').textContent = nowMonth() + ' 기준';
+}
+
+function updateKPI() {
+  const totalPaid = data.bakers.reduce((a,b) => a + (+b.thisMonth||0), 0);
+  const active    = data.bakers.filter(b => b.status === '활성').length;
+  const goodCafes = data.cafes.filter(c => c.status === '정상').length;
+  document.getElementById('kpi-paid').textContent = fmt(totalPaid);
+  document.getElementById('kpi-fee').textContent  = fmt(Math.round(totalPaid * 0.3));
+  document.getElementById('kpi-month').textContent = nowMonth() + ' 기준';
+  document.getElementById('kpi-bakers').textContent = active + '명';
+  document.getElementById('kpi-bakers-sub').textContent = '전체 ' + data.bakers.length + '명';
+  document.getElementById('kpi-cafes').textContent = goodCafes + '곳';
+  document.getElementById('kpi-cafes-sub').textContent = '전체 ' + data.cafes.length + '곳';
+  document.getElementById('q-delay').textContent   = data.cafes.filter(c=>c.status==='지연').length + '곳 ⚠️';
+  document.getElementById('q-dev').textContent     = data.devs.length + '종';
+  document.getElementById('q-unpaid').textContent  = data.bakers.filter(b=>(+b.thisMonth||0)===0).length + '명';
+  const avg = data.cafes.length ? Math.round(data.cafes.reduce((a,c)=>a+(+c.amount||0),0)/data.cafes.length) : 0;
+  document.getElementById('q-avg').textContent = fmt(avg);
+}
+
+// ── 인라인 편집 헬퍼
 function editable(value, onSave, type='text') {
-  const el = document.createElement(type === 'number' ? 'span' : 'span');
+  const el = document.createElement('span');
   el.className = 'editable';
   el.contentEditable = 'true';
   el.textContent = value;
   el.addEventListener('blur', () => {
-    const v = type === 'number' ? parseInt(el.textContent.replace(/[^0-9]/g,'')) || 0 : el.textContent.trim();
+    const raw = el.textContent.trim();
+    const v = type === 'number' ? (parseInt(raw.replace(/[^0-9]/g,''))||0) : raw;
     onSave(v);
     markChanged();
     render();
   });
-  el.addEventListener('keydown', e => { if(e.key === 'Enter') { e.preventDefault(); el.blur(); } });
+  el.addEventListener('keydown', e => { if(e.key==='Enter'){e.preventDefault();el.blur();} });
   return el;
 }
 
@@ -303,289 +520,208 @@ function statusSelect(value, options, onSave) {
   return sel;
 }
 
-// ── 렌더 메인 ──
-function render() {
-  updateKPI();
-  renderBakerTable();
-  renderDevList();
-  renderCafeTable();
-  renderCafeCards();
-  renderStageSummary();
-  renderCharts();
-  document.getElementById('ledger-month-label').textContent = nowMonth() + ' 기준';
-}
-
-// ── KPI ──
-function updateKPI() {
-  const totalPaid = data.bakers.reduce((a,b) => a + b.thisMonth, 0);
-  const active = data.bakers.filter(b => b.status === '활성').length;
-  const goodCafes = data.cafes.filter(c => c.status === '정상').length;
-  document.getElementById('kpi-paid').textContent = fmt(totalPaid);
-  document.getElementById('kpi-fee').textContent = fmt(Math.round(totalPaid * 0.3));
-  document.getElementById('kpi-month').textContent = nowMonth() + ' 기준';
-  document.getElementById('kpi-bakers').textContent = active + '명';
-  document.getElementById('kpi-bakers-sub').textContent = '전체 ' + data.bakers.length + '명';
-  document.getElementById('kpi-cafes').textContent = goodCafes + '곳';
-  document.getElementById('kpi-cafes-sub').textContent = '전체 ' + data.cafes.length + '곳';
-  document.getElementById('q-delay').textContent = data.cafes.filter(c=>c.status==='지연').length + '곳 ⚠️';
-  document.getElementById('q-dev').textContent = data.devs.length + '종';
-  document.getElementById('q-unpaid').textContent = data.bakers.filter(b=>b.thisMonth===0).length + '명';
-  const avg = data.cafes.length ? Math.round(data.cafes.reduce((a,c)=>a+c.amount,0)/data.cafes.length) : 0;
-  document.getElementById('q-avg').textContent = fmt(avg);
-}
-
-// ── 베이커 테이블 ──
+// ── 베이커 테이블
 function renderBakerTable() {
   const tbody = document.getElementById('baker-tbody');
   tbody.innerHTML = '';
   let sumPaid = 0, sumTotal = 0;
   data.bakers.forEach(b => {
-    sumPaid += b.thisMonth; sumTotal += b.total;
+    sumPaid += (+b.thisMonth||0); sumTotal += (+b.total||0);
     const tr = document.createElement('tr');
 
-    const tdName = document.createElement('td');
-    tdName.style.fontWeight = '600';
+    const tdName = document.createElement('td'); tdName.style.fontWeight='600';
     tdName.appendChild(editable(b.name, v => b.name = v));
 
     const tdSpec = document.createElement('td');
     tdSpec.appendChild(editable(b.specialty, v => b.specialty = v));
 
-    const tdStatus = document.createElement('td');
-    tdStatus.appendChild(statusSelect(b.status, STATUS_BAKER, v => b.status = v));
+    const tdSt = document.createElement('td');
+    tdSt.appendChild(statusSelect(b.status, STATUS_BAKER, v => b.status = v));
 
-    const tdThis = document.createElement('td');
-    tdThis.style.fontWeight = '700';
-    const eThis = editable(b.thisMonth, v => { b.thisMonth = v; b.total += (v - b.thisMonth); }, 'number');
+    const tdThis = document.createElement('td'); tdThis.style.fontWeight='700';
+    const eThis = editable(b.thisMonth, v => b.thisMonth = v, 'number');
     eThis.textContent = b.thisMonth;
     tdThis.appendChild(eThis);
-    tdThis.insertAdjacentHTML('beforeend', '<span style="color:var(--text-muted);font-size:11px"> 원</span>');
 
-    const tdTotal = document.createElement('td');
-    const eTotal = editable(b.total, v => b.total = v, 'number');
-    eTotal.textContent = b.total;
-    tdTotal.appendChild(eTotal);
-    tdTotal.insertAdjacentHTML('beforeend', '<span style="color:var(--text-muted);font-size:11px"> 원</span>');
+    const tdTot = document.createElement('td');
+    const eTot = editable(b.total, v => b.total = v, 'number');
+    eTot.textContent = b.total;
+    tdTot.appendChild(eTot);
 
     const tdFee = document.createElement('td');
     tdFee.style.cssText = 'color:var(--brown-light);font-weight:600';
     tdFee.textContent = b.thisMonth > 0 ? fmt(Math.round(b.thisMonth * 0.3)) : '-';
 
     const tdDel = document.createElement('td');
-    const del = document.createElement('button');
-    del.className = 'btn-del'; del.textContent = '✕';
-    del.onclick = () => { data.bakers = data.bakers.filter(x => x.id !== b.id); markChanged(); render(); };
+    const del = document.createElement('button'); del.className='btn-del'; del.textContent='✕';
+    del.onclick = () => { if(confirm(b.name + '을 삭제할까요?')){ data.bakers = data.bakers.filter(x=>x.id!==b.id); markChanged(); render(); } };
     tdDel.appendChild(del);
 
-    tr.append(tdName, tdSpec, tdStatus, tdThis, tdTotal, tdFee, tdDel);
+    tr.append(tdName, tdSpec, tdSt, tdThis, tdTot, tdFee, tdDel);
     tbody.appendChild(tr);
   });
-  const sumFee = Math.round(sumPaid * 0.3);
-  document.getElementById('foot-paid').textContent = fmt(sumPaid);
+  document.getElementById('foot-paid').textContent  = fmt(sumPaid);
   document.getElementById('foot-total').textContent = fmt(sumTotal);
-  document.getElementById('foot-fee').textContent = fmt(sumFee);
+  document.getElementById('foot-fee').textContent   = fmt(Math.round(sumPaid * 0.3));
 }
 
 function addBaker() {
-  data.bakers.push({ id: nextId++, name:"새 베이커", specialty:"품목 입력", status:"활성", thisMonth:0, total:0 });
+  data.bakers.push({id:nextId++,name:"새 베이커",specialty:"품목 입력",status:"활성",thisMonth:0,total:0});
   markChanged(); render();
 }
 
-// ── 개발 리스트 ──
+// ── 개발 리스트
 function renderDevList() {
-  const list = document.getElementById('dev-list');
-  list.innerHTML = '';
+  const list = document.getElementById('dev-list'); list.innerHTML = '';
   data.devs.forEach(d => {
-    const div = document.createElement('div');
-    div.className = 'dev-item';
-
-    const top = document.createElement('div'); top.className = 'dev-top';
+    const div = document.createElement('div'); div.className='dev-item';
+    const top = document.createElement('div'); top.className='dev-top';
     const left = document.createElement('div');
 
-    const nameEl = document.createElement('div'); nameEl.className = 'dev-name';
+    const nameEl = document.createElement('div'); nameEl.className='dev-name';
     nameEl.appendChild(editable(d.item, v => d.item = v));
-    const metaEl = document.createElement('div'); metaEl.className = 'dev-meta';
+    const metaEl = document.createElement('div'); metaEl.className='dev-meta';
     metaEl.textContent = '담당: ';
     metaEl.appendChild(editable(d.baker, v => d.baker = v));
     metaEl.insertAdjacentText('beforeend', ' · 마감: ');
     metaEl.appendChild(editable(d.deadline, v => d.deadline = v));
-
     left.append(nameEl, metaEl);
 
-    const right = document.createElement('div'); right.className = 'dev-right';
-
-    // stage select
-    const stageSel = document.createElement('select');
-    stageSel.className = 'edit-select';
-    stageSel.style.cssText = 'background:' + (STAGE_COLORS[d.stage]||'#EEE') + ';color:#FFF8F0;border-color:transparent';
-    STAGES.forEach(s => {
-      const o = document.createElement('option'); o.value = s; o.textContent = s;
-      if(s === d.stage) o.selected = true;
-      stageSel.appendChild(o);
-    });
+    const right = document.createElement('div'); right.className='dev-right';
+    const stageSel = document.createElement('select'); stageSel.className='edit-select';
+    stageSel.style.cssText = 'background:'+(STAGE_COLORS[d.stage]||'#EEE')+';color:#FFF8F0;border-color:transparent';
+    STAGES.forEach(s => { const o=document.createElement('option'); o.value=s; o.textContent=s; if(s===d.stage)o.selected=true; stageSel.appendChild(o); });
     stageSel.addEventListener('change', () => { d.stage = stageSel.value; markChanged(); render(); });
 
-    // progress
     const pct = document.createElement('span');
-    pct.style.cssText = 'font-size:14px;font-weight:700;color:var(--brown-light)';
-    const pEl = editable(d.progress, v => { d.progress = Math.min(100, Math.max(0, v)); }, 'number');
+    pct.style.cssText='font-size:14px;font-weight:700;color:var(--brown-light)';
+    const pEl = editable(d.progress, v => { d.progress = Math.min(100,Math.max(0,v)); }, 'number');
     pEl.textContent = d.progress;
     pct.appendChild(pEl);
-    pct.insertAdjacentText('beforeend', '%');
+    pct.insertAdjacentText('beforeend','%');
 
-    const del = document.createElement('button');
-    del.className = 'btn-del'; del.textContent = '✕';
-    del.onclick = () => { data.devs = data.devs.filter(x => x.id !== d.id); markChanged(); render(); };
-
+    const del = document.createElement('button'); del.className='btn-del'; del.textContent='✕';
+    del.onclick = () => { if(confirm(d.item+' 삭제?')){ data.devs=data.devs.filter(x=>x.id!==d.id); markChanged(); render(); } };
     right.append(stageSel, pct, del);
     top.append(left, right);
 
-    const bar = document.createElement('div'); bar.className = 'progress-wrap';
-    const fill = document.createElement('div'); fill.className = 'progress-bar';
-    fill.style.width = d.progress + '%';
+    const bar=document.createElement('div'); bar.className='progress-wrap';
+    const fill=document.createElement('div'); fill.className='progress-bar'; fill.style.width=d.progress+'%';
     bar.appendChild(fill);
 
-    const note = document.createElement('div'); note.className = 'dev-note';
-    note.textContent = '📝 ';
-    note.appendChild(editable(d.note, v => d.note = v));
-
-    div.append(top, bar, note);
-    list.appendChild(div);
+    const note=document.createElement('div'); note.className='dev-note';
+    note.textContent='📝 '; note.appendChild(editable(d.note, v=>d.note=v));
+    div.append(top, bar, note); list.appendChild(div);
   });
 }
 
 function addDev() {
-  data.devs.push({ id: nextId++, baker:"베이커명", item:"신규 개발 품목", stage:"기획", progress:0, deadline:"", note:"메모 입력" });
+  data.devs.push({id:nextId++,baker:"베이커명",item:"신규 개발 품목",stage:"기획",progress:0,deadline:"",note:"메모 입력"});
   markChanged(); render();
 }
 
-// ── 단계 요약 ──
 function renderStageSummary() {
-  const el = document.getElementById('stage-summary');
-  el.innerHTML = '';
+  const el = document.getElementById('stage-summary'); el.innerHTML='';
   STAGES.slice(0,4).forEach(s => {
-    const cnt = data.devs.filter(d => d.stage === s).length;
+    const cnt = data.devs.filter(d=>d.stage===s).length;
     el.innerHTML += `<div class="stage-mini"><div class="stage-dot" style="background:${STAGE_COLORS[s]}"></div><div class="stage-count">${cnt}</div><div class="stage-label">${s}</div></div>`;
   });
 }
 
-// ── 카페 테이블 ──
+// ── 카페 테이블
 function renderCafeTable() {
-  const tbody = document.getElementById('cafe-tbody');
-  tbody.innerHTML = '';
-  let sum = 0;
+  const tbody = document.getElementById('cafe-tbody'); tbody.innerHTML=''; let sum=0;
   data.cafes.forEach(c => {
-    sum += c.amount;
+    sum += (+c.amount||0);
     const tr = document.createElement('tr');
+    const make = (val,cb) => { const td=document.createElement('td'); td.appendChild(editable(val,cb)); return td; };
 
-    const make = (val, cb) => { const td = document.createElement('td'); td.appendChild(editable(val, cb)); return td; };
+    const tdName=document.createElement('td'); tdName.style.fontWeight='700';
+    tdName.textContent='☕ '; tdName.appendChild(editable(c.name, v=>c.name=v));
 
-    const tdName = document.createElement('td');
-    tdName.style.fontWeight = '700';
-    tdName.textContent = '☕ ';
-    tdName.appendChild(editable(c.name, v => c.name = v));
-
-    const tdStatus = document.createElement('td');
-    tdStatus.appendChild(statusSelect(c.status, STATUS_CAFE, v => c.status = v));
-
-    const tdAmt = document.createElement('td');
-    tdAmt.style.fontWeight = '600';
-    const eAmt = editable(c.amount, v => c.amount = v, 'number');
-    eAmt.textContent = c.amount;
+    const tdAmt=document.createElement('td'); tdAmt.style.fontWeight='600';
+    const eAmt=editable(c.amount, v=>c.amount=v, 'number'); eAmt.textContent=c.amount;
     tdAmt.appendChild(eAmt);
-    tdAmt.insertAdjacentHTML('beforeend','<span style="color:var(--text-muted);font-size:11px"> 원</span>');
 
-    const tdDel = document.createElement('td');
-    const del = document.createElement('button');
-    del.className = 'btn-del'; del.textContent = '✕';
-    del.onclick = () => { data.cafes = data.cafes.filter(x => x.id !== c.id); markChanged(); render(); };
+    const tdSt=document.createElement('td');
+    tdSt.appendChild(statusSelect(c.status, STATUS_CAFE, v=>c.status=v));
+
+    const tdDel=document.createElement('td');
+    const del=document.createElement('button'); del.className='btn-del'; del.textContent='✕';
+    del.onclick=()=>{ if(confirm(c.name+' 삭제?')){ data.cafes=data.cafes.filter(x=>x.id!==c.id); markChanged(); render(); } };
     tdDel.appendChild(del);
 
-    tr.append(
-      tdName,
-      make(c.region, v => c.region = v),
-      make(c.baker, v => c.baker = v),
-      make(c.item, v => c.item = v),
-      make(c.freq, v => c.freq = v),
-      make(c.lastDate, v => c.lastDate = v),
-      tdAmt, tdStatus, tdDel
-    );
+    tr.append(tdName, make(c.region,v=>c.region=v), make(c.baker,v=>c.baker=v),
+              make(c.item,v=>c.item=v), make(c.freq,v=>c.freq=v), make(c.lastDate,v=>c.lastDate=v),
+              tdAmt, tdSt, tdDel);
     tbody.appendChild(tr);
   });
   document.getElementById('cafe-foot-total').textContent = fmt(sum);
 }
 
 function renderCafeCards() {
-  const el = document.getElementById('cafe-cards');
-  el.innerHTML = '';
+  const el=document.getElementById('cafe-cards'); el.innerHTML='';
   data.cafes.forEach(c => {
-    const isDelay = c.status === '지연';
-    el.innerHTML += `
-      <div class="cafe-card ${isDelay ? 'delay' : ''}">
-        <div class="cafe-card-top">
-          <span class="cafe-card-name">☕ ${c.name}</span>
-          <span class="badge ${isDelay ? 'badge-red' : 'badge-green'}">${c.status}</span>
-        </div>
-        <div class="cafe-card-detail">📍 ${c.region} · 👩‍🍳 ${c.baker}</div>
-        <div class="cafe-card-detail">🥐 ${c.item} (${c.freq})</div>
-        <div class="cafe-card-amount">${fmt(c.amount)}/월</div>
-      </div>`;
+    const isDelay = c.status==='지연';
+    el.innerHTML+=`<div class="cafe-card ${isDelay?'delay':''}">
+      <div class="cafe-card-top"><span class="cafe-card-name">☕ ${c.name}</span>
+      <span class="badge ${isDelay?'badge-red':'badge-green'}">${c.status}</span></div>
+      <div class="cafe-card-detail">📍 ${c.region} · 👩‍🍳 ${c.baker}</div>
+      <div class="cafe-card-detail">🥐 ${c.item} (${c.freq})</div>
+      <div class="cafe-card-amount">${fmt(+c.amount||0)}/월</div></div>`;
   });
 }
 
 function addCafe() {
-  data.cafes.push({ id: nextId++, name:"새 카페", region:"지역", baker:"베이커명", item:"납품 품목", freq:"주 1회", lastDate:"", amount:0, status:"정상" });
+  data.cafes.push({id:nextId++,name:"새 카페",region:"지역",baker:"베이커명",item:"납품 품목",freq:"주 1회",lastDate:"",amount:0,status:"정상"});
   markChanged(); render();
 }
 
-// ── 차트 ──
+// ── 차트
 function renderCharts() {
-  const months = data.monthly.map(m => m.month);
-  const paid   = data.monthly.map(m => m.paid);
-  const fee    = data.monthly.map(m => Math.round(m.paid * 0.3));
+  const months = data.monthly.map(m=>m.month);
+  const paid   = data.monthly.map(m=>+m.paid||0);
+  const fee    = paid.map(p=>Math.round(p*0.3));
+  const pieLabels = data.bakers.filter(b=>(+b.thisMonth||0)>0).map(b=>b.name);
+  const pieVals   = data.bakers.filter(b=>(+b.thisMonth||0)>0).map(b=>+b.thisMonth||0);
 
-  const pieLabels = data.bakers.filter(b=>b.thisMonth>0).map(b=>b.name);
-  const pieVals   = data.bakers.filter(b=>b.thisMonth>0).map(b=>b.thisMonth);
-  const PIE_COLORS = ['#C97B3A','#E8B87A','#6B4226','#A0522D','#D4956A'];
-
-  const chartDefs = [
-    { id:'chart-bar',  type:'bar',    labels:months, datasets:[{label:'지급액',data:paid,backgroundColor:'#C97B3A',borderRadius:4},{label:'수수료 수익',data:fee,backgroundColor:'#E8B87A',borderRadius:4}], yFmt: v=>v/10000+'만' },
-    { id:'chart-pie',  type:'doughnut', labels:pieLabels, datasets:[{data:pieVals,backgroundColor:PIE_COLORS,borderWidth:0}], legend:'bottom' },
-    { id:'chart-line', type:'line',   labels:months, datasets:[{label:'수수료 수익',data:fee,borderColor:'#C97B3A',backgroundColor:'rgba(201,123,58,0.1)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#C97B3A'}], yFmt: v=>v/10000+'만' },
-    { id:'chart-bar2', type:'bar',    labels:months, datasets:[{label:'지급액',data:paid,backgroundColor:'#C97B3A',borderRadius:4},{label:'수수료 수익',data:fee,backgroundColor:'#E8B87A',borderRadius:4}], yFmt: v=>v/10000+'만' },
+  const defs=[
+    {id:'chart-bar', type:'bar',    labels:months, datasets:[{label:'지급액',data:paid,backgroundColor:'#C97B3A',borderRadius:4},{label:'수수료 수익',data:fee,backgroundColor:'#E8B87A',borderRadius:4}]},
+    {id:'chart-pie', type:'doughnut',labels:pieLabels,datasets:[{data:pieVals,backgroundColor:PIE_COLORS,borderWidth:0}],legend:'bottom'},
+    {id:'chart-line',type:'line',   labels:months, datasets:[{label:'수수료 수익',data:fee,borderColor:'#C97B3A',backgroundColor:'rgba(201,123,58,0.1)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#C97B3A'}]},
+    {id:'chart-bar2',type:'bar',    labels:months, datasets:[{label:'지급액',data:paid,backgroundColor:'#C97B3A',borderRadius:4},{label:'수수료 수익',data:fee,backgroundColor:'#E8B87A',borderRadius:4}]},
   ];
-
-  chartDefs.forEach(def => {
-    if(charts[def.id]) { charts[def.id].destroy(); }
-    const ctx = document.getElementById(def.id);
-    if(!ctx) return;
-    charts[def.id] = new Chart(ctx, {
-      type: def.type,
-      data: { labels: def.labels, datasets: def.datasets },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: def.legend || 'top', labels: { font:{size:11} } },
-          tooltip: { callbacks: { label: ctx => def.yFmt ? '₩'+(ctx.raw).toLocaleString() : ctx.raw } }
-        },
-        scales: def.type === 'doughnut' ? {} : {
-          y: { ticks: { callback: def.yFmt || (v=>v), font:{size:10} }, grid: { color:'#EEE0D0' } },
-          x: { ticks: { font:{size:11} }, grid: { display:false } }
-        }
-      }
+  defs.forEach(def => {
+    if(charts[def.id]) charts[def.id].destroy();
+    const ctx=document.getElementById(def.id); if(!ctx) return;
+    charts[def.id]=new Chart(ctx,{
+      type:def.type,
+      data:{labels:def.labels,datasets:def.datasets},
+      options:{responsive:true,plugins:{legend:{position:def.legend||'top',labels:{font:{size:11}}},tooltip:{callbacks:{label:c=>'₩'+(+c.raw).toLocaleString()}}},
+        scales:def.type==='doughnut'?{}:{y:{ticks:{callback:v=>v/10000+'만',font:{size:10}},grid:{color:'#EEE0D0'}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
     });
   });
 }
 
 function switchTab(name, btn) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
   setTimeout(renderCharts, 50);
 }
 
-// ── 초기 렌더 ──
-render();
+// ════════════════════════════════════════
+// ── 초기 실행
+// ════════════════════════════════════════
+window.addEventListener('load', () => {
+  if (!API_URL) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('setup-screen').style.display = 'flex';
+  } else {
+    loadAllData();
+  }
+});
 </script>
 </body>
 </html>
