@@ -181,6 +181,7 @@
   <button class="tab-btn" onclick="switchTab('ledger',this)">💰 지급 가계부</button>
   <button class="tab-btn" onclick="switchTab('development',this)">🧪 제빵 개발</button>
   <button class="tab-btn" onclick="switchTab('delivery',this)">🚚 납품 현황</button>
+  <button class="tab-btn" onclick="refreshData()" style="margin-left:auto;color:var(--brown-light)">🔄 Sheets에서 새로고침</button>
 </div>
 
 <div class="content">
@@ -432,18 +433,27 @@ async function saveAllData() {
   msg.textContent = '⏳ Sheets에 저장 중...';
 
   try {
-    const encoded = encodeURIComponent(JSON.stringify({
-      bakers: data.bakers, devs: data.devs,
-      cafes: data.cafes, monthly: data.monthly,
-    }));
-    const res = await fetch(`${API_URL}?action=writeAll&data=${encoded}`, {
-      method: 'GET', redirect: 'follow',
+    // POST + no-cors: CORS 우회, 응답은 못 읽지만 데이터는 전송됨
+    await fetch(API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        action: 'writeAll',
+        bakers: data.bakers,
+        devs: data.devs,
+        cafes: data.cafes,
+        monthly: data.monthly,
+      }),
     });
-    const json = await res.json();
-    if (json.status !== 'ok') throw new Error('server error');
     localStorage.setItem('biacook_local', JSON.stringify(data));
     msg.textContent = '✅ Google Sheets 저장 완료!';
-    setTimeout(() => { changed = false; document.getElementById('save-bar').classList.remove('show'); msg.textContent = '💾 변경사항이 있어요'; btn.disabled = false; }, 2000);
+    setTimeout(() => {
+      changed = false;
+      document.getElementById('save-bar').classList.remove('show');
+      msg.textContent = '💾 변경사항이 있어요';
+      btn.disabled = false;
+    }, 2000);
   } catch(e) {
     console.error(e);
     msg.textContent = '❌ 저장 실패. 다시 시도해주세요.';
@@ -708,6 +718,18 @@ function switchTab(name, btn) {
   document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
   setTimeout(renderCharts, 50);
+}
+
+// ════════════════════════════════════════
+// ── 새로고침 (Sheets → 화면)
+// ════════════════════════════════════════
+async function refreshData() {
+  if (isLocalMode) { alert('로컬 모드에서는 새로고침이 필요 없어요.'); return; }
+  if (changed) {
+    if (!confirm('저장하지 않은 변경사항이 있어요. 새로고침하면 사라져요. 계속할까요?')) return;
+  }
+  document.getElementById('loading').style.display = 'flex';
+  await loadAllData();
 }
 
 // ════════════════════════════════════════
