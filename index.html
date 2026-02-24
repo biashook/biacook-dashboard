@@ -215,7 +215,7 @@
       </div>
       <div class="edit-hint">✏️ 이름, 품목, 금액을 클릭하면 바로 수정 — 저장 버튼 누르면 Google Sheets에 반영돼요</div>
       <table>
-        <thead><tr><th>베이커</th><th>전문 품목</th><th>상태</th><th>이번 달 지급(원)</th><th>누적 지급액(원)</th><th>수수료(30%)</th><th></th></tr></thead>
+        <thead><tr><th>베이커</th><th>전문 품목</th><th>상태</th><th>이번 달 지급 ($)</th><th>누적 지급액 ($)</th><th>수수료(30%)</th><th></th></tr></thead>
         <tbody id="baker-tbody"></tbody>
         <tfoot><tr><td colspan="3">합계</td><td id="foot-paid">-</td><td id="foot-total">-</td><td id="foot-fee">-</td><td></td></tr></tfoot>
       </table>
@@ -244,7 +244,7 @@
       <div class="card-header">🚚 카페 납품 현황</div>
       <div class="edit-hint">✏️ 카페명, 금액, 상태 클릭 후 수정 → 저장 버튼으로 Sheets에 반영</div>
       <table>
-        <thead><tr><th>카페명</th><th>지역</th><th>담당 베이커</th><th>납품 품목</th><th>납품 주기</th><th>최근 납품일</th><th>월 납품액(원)</th><th>상태</th><th></th></tr></thead>
+        <thead><tr><th>카페명</th><th>지역</th><th>담당 베이커</th><th>납품 품목</th><th>납품 주기</th><th>최근 납품일</th><th>월 납품액 ($)</th><th>상태</th><th></th></tr></thead>
         <tbody id="cafe-tbody"></tbody>
         <tfoot><tr><td colspan="6">월 총 납품액</td><td id="cafe-foot-total">-</td><td colspan="2"></td></tr></tfoot>
       </table>
@@ -271,17 +271,17 @@
 // ════════════════════════════════════════
 const STAGES = ["기획","레시피 완성","시제품 제작","카페 테스트","납품 확정"];
 const STAGE_COLORS = {"기획":"#E8D5C0","레시피 완성":"#C97B3A","시제품 제작":"#A0522D","카페 테스트":"#6B4226","납품 확정":"#3B2A1A"};
-const STATUS_BAKER = ["활성","대기","중단"];
+const STATUS_BAKER = ["활성","개발","대기","중단"];
 const STATUS_CAFE  = ["정상","지연","중단"];
 const PIE_COLORS   = ['#C97B3A','#E8B87A','#6B4226','#A0522D','#D4956A'];
 
 const DEFAULT_DATA = {
   bakers: [
-    {id:1,name:"김민지",specialty:"마카롱",status:"활성",thisMonth:120000,total:420000},
-    {id:2,name:"이수연",specialty:"스콘/타르트",status:"활성",thisMonth:95000,total:380000},
-    {id:3,name:"박지현",specialty:"케이크",status:"활성",thisMonth:180000,total:560000},
-    {id:4,name:"최아름",specialty:"쿠키류",status:"대기",thisMonth:0,total:200000},
-    {id:5,name:"정소희",specialty:"브레드",status:"활성",thisMonth:85000,total:310000},
+    {id:1,name:"김민지",specialty:"마카롱",status:"활성",thisMonth:120,total:420},
+    {id:2,name:"이수연",specialty:"스콘/타르트",status:"활성",thisMonth:95,total:380},
+    {id:3,name:"박지현",specialty:"케이크",status:"활성",thisMonth:180,total:560},
+    {id:4,name:"최아름",specialty:"쿠키류",status:"대기",thisMonth:0,total:200},
+    {id:5,name:"정소희",specialty:"브레드",status:"활성",thisMonth:85,total:310},
   ],
   devs: [
     {id:1,baker:"박지현",item:"딸기 생크림 케이크",stage:"카페 테스트",progress:80,deadline:"2026-03-10",note:"맛 피드백 반영 중"},
@@ -290,14 +290,14 @@ const DEFAULT_DATA = {
     {id:4,baker:"정소희",item:"크랜베리 호밀빵",stage:"기획",progress:15,deadline:"2026-04-15",note:"원가 계산 필요"},
   ],
   cafes: [
-    {id:1,name:"Bloom Coffee",region:"애틀랜타",baker:"박지현",item:"데일리 케이크 슬라이스",freq:"주 3회",lastDate:"2026-02-22",amount:180000,status:"정상"},
-    {id:2,name:"The Daily Grind",region:"스톤마운틴",baker:"김민지",item:"마카롱 세트(10입)",freq:"주 2회",lastDate:"2026-02-20",amount:120000,status:"정상"},
-    {id:3,name:"Porch & Roast",region:"디케이터",baker:"이수연",item:"스콘 믹스",freq:"주 2회",lastDate:"2026-02-18",amount:95000,status:"지연"},
-    {id:4,name:"Oak & Ember",region:"마리에타",baker:"정소희",item:"식사빵 모둠",freq:"주 1회",lastDate:"2026-02-21",amount:85000,status:"정상"},
+    {id:1,name:"Bloom Coffee",region:"애틀랜타",baker:"박지현",item:"데일리 케이크 슬라이스",freq:"주 3회",lastDate:"2026-02-22",amount:180,status:"정상"},
+    {id:2,name:"The Daily Grind",region:"스톤마운틴",baker:"김민지",item:"마카롱 세트(10입)",freq:"주 2회",lastDate:"2026-02-20",amount:120,status:"정상"},
+    {id:3,name:"Porch & Roast",region:"디케이터",baker:"이수연",item:"스콘 믹스",freq:"주 2회",lastDate:"2026-02-18",amount:95,status:"지연"},
+    {id:4,name:"Oak & Ember",region:"마리에타",baker:"정소희",item:"식사빵 모둠",freq:"주 1회",lastDate:"2026-02-21",amount:85,status:"정상"},
   ],
   monthly:[
-    {month:"9월",paid:280000},{month:"10월",paid:350000},{month:"11월",paid:420000},
-    {month:"12월",paid:390000},{month:"1월",paid:480000},{month:"2월",paid:480000},
+    {month:"9월",paid:280},{month:"10월",paid:350},{month:"11월",paid:420},
+    {month:"12월",paid:390},{month:"1월",paid:480},{month:"2월",paid:480},
   ]
 };
 
@@ -311,8 +311,8 @@ let charts = {};
 let API_URL = localStorage.getItem('biacook_api_url') || '';
 let isLocalMode = !API_URL;
 
-const fmt = n => (n > 0 ? '₩' + Number(n).toLocaleString('ko-KR') : '-');
-const nowMonth = () => new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long'});
+const fmt = n => (n > 0 ? '$' + Number(n).toLocaleString('en-US') : '-');
+const nowMonth = () => new Date().toLocaleDateString('en-US',{year:'numeric',month:'long'});
 
 // ════════════════════════════════════════
 // ── API 설정
@@ -696,8 +696,8 @@ function renderCharts() {
     charts[def.id]=new Chart(ctx,{
       type:def.type,
       data:{labels:def.labels,datasets:def.datasets},
-      options:{responsive:true,plugins:{legend:{position:def.legend||'top',labels:{font:{size:11}}},tooltip:{callbacks:{label:c=>'₩'+(+c.raw).toLocaleString()}}},
-        scales:def.type==='doughnut'?{}:{y:{ticks:{callback:v=>v/10000+'만',font:{size:10}},grid:{color:'#EEE0D0'}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
+      options:{responsive:true,plugins:{legend:{position:def.legend||'top',labels:{font:{size:11}}},tooltip:{callbacks:{label:c=>'$'+(+c.raw).toLocaleString('en-US')}}},
+        scales:def.type==='doughnut'?{}:{y:{ticks:{callback:v=>'$'+v,font:{size:10}},grid:{color:'#EEE0D0'}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
     });
   });
 }
