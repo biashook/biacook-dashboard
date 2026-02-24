@@ -406,7 +406,9 @@ async function loadAllData() {
 }
 
 async function fetchSheet(sheetName) {
-  const res = await fetch(`${API_URL}?sheet=${sheetName}`, { method:'GET' });
+  const res = await fetch(`${API_URL}?action=read&sheet=${sheetName}`, {
+    method: 'GET', redirect: 'follow',
+  });
   const json = await res.json();
   return json.data || [];
 }
@@ -430,27 +432,24 @@ async function saveAllData() {
   msg.textContent = '⏳ Sheets에 저장 중...';
 
   try {
-    await Promise.all([
-      postSheet('bakers',  data.bakers),
-      postSheet('devs',    data.devs),
-      postSheet('cafes',   data.cafes),
-      postSheet('monthly', data.monthly),
-    ]);
-    localStorage.setItem('biacook_local', JSON.stringify(data)); // 로컬 캐시도 갱신
+    const encoded = encodeURIComponent(JSON.stringify({
+      bakers: data.bakers, devs: data.devs,
+      cafes: data.cafes, monthly: data.monthly,
+    }));
+    const res = await fetch(`${API_URL}?action=writeAll&data=${encoded}`, {
+      method: 'GET', redirect: 'follow',
+    });
+    const json = await res.json();
+    if (json.status !== 'ok') throw new Error('server error');
+    localStorage.setItem('biacook_local', JSON.stringify(data));
     msg.textContent = '✅ Google Sheets 저장 완료!';
     setTimeout(() => { changed = false; document.getElementById('save-bar').classList.remove('show'); msg.textContent = '💾 변경사항이 있어요'; btn.disabled = false; }, 2000);
   } catch(e) {
+    console.error(e);
     msg.textContent = '❌ 저장 실패. 다시 시도해주세요.';
     btn.disabled = false;
     setTimeout(() => { msg.textContent = '💾 변경사항이 있어요'; }, 3000);
   }
-}
-
-async function postSheet(sheet, rows) {
-  await fetch(API_URL, {
-    method: 'POST',
-    body: JSON.stringify({ sheet, data: rows }),
-  });
 }
 
 function markChanged() {
